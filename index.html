@@ -12,18 +12,37 @@
         <link rel="stylesheet" href="./code-mirror/codemirror.css">
         <link rel="stylesheet" href="./code-mirror/addon/hint/show-hint.css">
         <script src="./code-mirror/codemirror.js"></script>
+
         <script src="./code-mirror/addon/hint/show-hint.js"></script>
         <script src="./code-mirror/addon/hint/xml-hint.js"></script>
         <script src="./code-mirror/addon/hint/html-hint.js"></script>
+
         <script src="./code-mirror/mode/xml/xml.js"></script>
         <script src="./code-mirror/mode/javascript/javascript.js"></script>
         <script src="./code-mirror/mode/css/css.js"></script>
+        <script src="./code-mirror/mode/vbscript/vbscript.js"></script>
         <script src="./code-mirror/mode/htmlmixed/htmlmixed.js"></script>
     </head>
     <body>
         <div class="ui two column grid">
             <div class="column">
-                <textarea class="htmlDocument"></textarea>
+                <textarea class="htmlDocument">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <style>
+            h1.myClass {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="myClass">Hello World!</h1>
+    </body>
+</html>
+                </textarea>
             </div>
             <div class="column">
                 <iframe class="result" frameborder="0"></iframe>
@@ -33,12 +52,32 @@
               CodeMirror.commands.autocomplete = function(cm) {
                 CodeMirror.showHint(cm, CodeMirror.hint.html);
               };
+              // Define an extended mixed-mode that understands vbscript and
+              // leaves mustache/handlebars embedded templates in html mode
+              var mixedMode = {
+                name: "htmlmixed",
+                scriptTypes: [
+                    {
+                        matches: /\/x-handlebars-template|\/x-mustache/i,
+                        mode: null
+                    },
+                    {
+                        matches: /(text|application)\/(x-)?vb(a|script)/i,
+                        mode: "vbscript"
+                    }
+                ]
+              };
               var editor = CodeMirror.fromTextArea($(".htmlDocument")[0], {
+                  mode: mixedMode,
+                  tabMode: "indent",
                   autoCloseBrackets: true,
                   lineNumbers: true,
-                  extraKeys: {"Ctrl-Space": "autocomplete"},
+                  extraKeys: {
+                    "Ctrl-Space": "autocomplete"
+                  },
                   value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
               });
+
               $(".htmlDocument").on("input", function () {
                   $(".result:first").contents().find("html").html($(this).val());        
               });
