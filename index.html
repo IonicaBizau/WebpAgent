@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="./js/jquery.min.js"></script>
+    </head>
+    <body>
+        <textarea class="htmlDocument"></textarea>
+        <iframe class="result" frameborder="0"></iframe>
+        <script>
+            $(".htmlDocument").on("input", function () {
+                $(".result:first").contents().find("html").html($(this).val());        
+            });
+        </script>
+    </body>
+</html>
