@@ -4,10 +4,20 @@
         <meta charset="UTF-8">
         <title></title>
         <script src="./js/jquery.min.js"></script>
+        <link rel="stylesheet" href="./semantic/css/semantic.min.css">
+        <script src="./semantic/javascript/semantic.min.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <textarea class="htmlDocument"></textarea>
-        <iframe class="result" frameborder="0"></iframe>
+        <div class="ui two column grid">
+            <div class="column">
+                <textarea class="htmlDocument"></textarea>
+            </div>
+            <div class="column">
+                <iframe class="result" frameborder="0"></iframe>
+            </div>
+        </div>
         <script>
             $(".htmlDocument").on("input", function () {
                 $(".result:first").contents().find("html").html($(this).val());        
