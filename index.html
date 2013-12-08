@@ -41,8 +41,7 @@
     <body>
         <h1 class="myClass">Hello World!</h1>
     </body>
-</html>
-                </textarea>
+</html></textarea>
             </div>
             <div class="column">
                 <iframe class="result" frameborder="0"></iframe>
@@ -78,8 +77,9 @@
                   value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
               });
 
-              $(".htmlDocument").on("input", function () {
-                  $(".result:first").contents().find("html").html($(this).val());        
+              editor.on("change", function (CM) {
+                  var htmlDocumentStr = CM.getValue()
+                  $(".result:first").contents().find("html").html(htmlDocumentStr);
               });
         </script>
     </body>
