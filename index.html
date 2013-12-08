@@ -78,9 +78,12 @@
               });
 
               editor.on("change", function (CM) {
+                  var ifrm = $(".result:first")[0];
+                  ifrm.contentDocument.body.textContent = "";
                   var htmlDocumentStr = CM.getValue()
-                  $(".result:first").contents().find("html").html(htmlDocumentStr);
+                  ifrm.contentDocument.write(htmlDocumentStr);
               });
+
         </script>
     </body>
 </html>
