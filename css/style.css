@@ -1,8 +1,20 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 
 html, body {
     height: 100%;
 }
 
+.column {
+    height: 100%;
+}
+.CodeMirror.cm-s-default {
+    height: 100%;
+}
+.column {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+}
