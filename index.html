@@ -81,7 +81,9 @@
                   var ifrm = $(".result:first")[0];
                   ifrm.contentDocument.body.textContent = "";
                   var htmlDocumentStr = CM.getValue()
+                  ifrm.contentDocument.open();
                   ifrm.contentDocument.write(htmlDocumentStr);
+                  ifrm.contentDocument.close();
               });
 
         </script>
