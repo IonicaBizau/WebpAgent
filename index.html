@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+
         <script src="./js/jquery.min.js"></script>
+        <script src="./js/johnnys-webview-functions.js"></script>
+
         <link rel="stylesheet" href="./semantic/css/semantic.min.css">
         <script src="./semantic/javascript/semantic.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
@@ -22,6 +25,8 @@
         <script src="./code-mirror/mode/css/css.js"></script>
         <script src="./code-mirror/mode/vbscript/vbscript.js"></script>
         <script src="./code-mirror/mode/htmlmixed/htmlmixed.js"></script>
+
+        <script src="./js/editor-functions.js"></script>
     </head>
     <body>
         <div class="ui two column grid">
@@ -110,43 +115,6 @@
         </div>
         <script>
             $API.setWindowTitle ("WebpAgent");
-              CodeMirror.commands.autocomplete = function(cm) {
-                CodeMirror.showHint(cm, CodeMirror.hint.html);
-              };
-              // Define an extended mixed-mode that understands vbscript and
-              // leaves mustache/handlebars embedded templates in html mode
-              var mixedMode = {
-                name: "htmlmixed",
-                scriptTypes: [
-                    {
-                        matches: /\/x-handlebars-template|\/x-mustache/i,
-                        mode: null
-                    },
-                    {
-                        matches: /(text|application)\/(x-)?vb(a|script)/i,
-                        mode: "vbscript"
-                    }
-                ]
-              };
-              var editor = CodeMirror.fromTextArea($(".htmlDocument")[0], {
-                  mode: mixedMode,
-                  tabMode: "indent",
-                  autoCloseBrackets: true,
-                  lineNumbers: true,
-                  extraKeys: {
-                    "Ctrl-Space": "autocomplete"
-                  },
-                  value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
-              });
-
-              editor.on("change", function (CM) {
-                  var ifrm = $(".result:first")[0];
-                  ifrm.contentDocument.body.textContent = "";
-                  var htmlDocumentStr = CM.getValue()
-                  ifrm.contentDocument.open();
-                  ifrm.contentDocument.write(htmlDocumentStr);
-                  ifrm.contentDocument.close();
-              });
 
         </script>
     </body>
