@@ -4,31 +4,23 @@
         <meta charset="UTF-8">
         <title></title>
 
-        <script src="./js/jquery.min.js"></script>
         <script src="./js/johnnys-webview-functions.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/start.js"></script>
 
         <link rel="stylesheet" href="./semantic/css/semantic.min.css">
-        <script src="./semantic/javascript/semantic.min.js"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="./css/style.css">
 
         <link rel="stylesheet" href="./code-mirror/codemirror.css">
         <link rel="stylesheet" href="./code-mirror/addon/hint/show-hint.css">
-        <script src="./code-mirror/codemirror.js"></script>
-
-        <script src="./code-mirror/addon/hint/show-hint.js"></script>
-        <script src="./code-mirror/addon/hint/xml-hint.js"></script>
-        <script src="./code-mirror/addon/hint/html-hint.js"></script>
-
-        <script src="./code-mirror/mode/xml/xml.js"></script>
-        <script src="./code-mirror/mode/javascript/javascript.js"></script>
-        <script src="./code-mirror/mode/css/css.js"></script>
-        <script src="./code-mirror/mode/vbscript/vbscript.js"></script>
-        <script src="./code-mirror/mode/htmlmixed/htmlmixed.js"></script>
-
-        <script src="./js/editor-functions.js"></script>
     </head>
     <body>
+        <div class="loading-overlay">
+            <h1>Loading ...</h1>
+            <h2>WebpAgent</h2>
+            <p><span class="loaded-percent"></span> %</p>
+        </div>
         <div class="ui two column grid">
             <div class="column">
                 <textarea class="htmlDocument">
