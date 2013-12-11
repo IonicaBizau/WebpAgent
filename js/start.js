@@ -49,9 +49,7 @@ function loadJsFile (path, callback) {
     var node = document.createElement('script');
     node.src = path;
     onLoad(node, function () {
-        setTimeout(function () {
-            callback();
-        }, 250);
+        callback();
     });
     head.appendChild(node);
 }
