@@ -40,4 +40,4 @@
     }
 
     updateResult();
-})i(window);
+})(window);
