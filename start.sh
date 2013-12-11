@@ -1,1 +1,1 @@
-johnnys-webview index.html 600 400
+johnnys-webview index.html 700 450
