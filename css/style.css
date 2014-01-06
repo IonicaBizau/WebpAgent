@@ -39,3 +39,18 @@ iframe.result {
     text-shadow: 2px 2px 0 black;
     font-size: 40px;
 }
+
+.controls {
+    position: absolute;
+    top: -30;
+    left: 0;
+    z-index: 99;
+    background: rgb(76, 206, 247);
+    right: 0;
+    padding: 4px;
+    border-bottom: 2px solid rgb(0, 122, 118);
+}
+
+.ml-s {
+    margin-left: 10px !important;
+}

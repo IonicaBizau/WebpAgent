@@ -28,7 +28,16 @@
         value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
     });
 
-    editor.on("change", updateResult);
+    // click on the start button
+    $(".run").on("click", function () {
+        updateResult();
+    });
+
+    $(window).on("keydown", function (e) {
+        if (e.ctrlKey && e.which === 13) { updateResult(); }
+    });
+
+    // editor.on("change", updateResult);
 
     function updateResult () {
         var ifrm = $(".result:first")[0];
