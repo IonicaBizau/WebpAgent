@@ -4,11 +4,10 @@
             // defaults
         }, options);
 
-
         var $self = this;
 
         $self.on("sidebar.hide", function () {
-            $self.animate({"top": - $self.height()});
+            $self.animate({"top": - $self.height() - 10});
         });
 
         $self.on("sidebar.show", function () {
@@ -56,7 +55,7 @@
 
     $(window).on("keydown", function (e) {
         if (e.ctrlKey && e.which === 13) { updateResult(); }
-        if (e.ctrlKey && e.which === 28) {
+        if (e.ctrlKey && e.which === 38) {
             $(".controls").trigger("sidebar.hide");
         }
         if (e.ctrlKey && e.which === 40) {
