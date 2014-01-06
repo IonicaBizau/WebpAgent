@@ -26,13 +26,13 @@
                 <button class="ui green mini right labeled icon button run">
                     Run <i class="tiny right long arrow icon"></i>
                 </button>
-                <button class="ml-s ui orange mini right labeled icon button">
+                <button class="ml-s ui orange mini right labeled icon button save">
                     Save <i class="tiny long save icon"></i>
                 </button>
-                <button class="ml-s ui teal mini right labeled icon button">
+                <button class="ml-s ui teal mini right labeled icon button open">
                     Open <i class="tiny long open folder icon"></i>
                 </button>
-                <button class="ml-s ui purple mini right labeled icon button">
+                <button class="ml-s ui purple mini right labeled icon button quit">
                     Quit <i class="tiny long close icon"></i>
                 </button>
             </div>
@@ -56,34 +56,34 @@
             padding: 10px;
             box-shadow: 2px 2px 0 darkgray;
           }
-         
+
           .myClass:hover {
             cursor: default;
           }
-          
+
           .myClass:nth-of-type(1) {
             color: blue;
           }
-          
+
           .myClass:nth-of-type(2) {
             color: yellow;
           }
-          
+
           .myClass:nth-of-type(3) {
             cursor: pointer;
             color: red;
           }
-          
+
           .myClass:nth-of-type(4) {
             background: red;
             cursor: pointer;
           }
-          
+
           .myClass:nth-of-type(4):hover {
             background: blue;
             cursor: pointer;
           }
-          
+
           .myClass:nth-of-type(3):hover {
             background: yellow;
           }
@@ -95,20 +95,20 @@
       <h1 class="myClass">Hello Yellow World!</h1>
       <h1 class="myClass">Hello Red World!</h1>
       <script>
-        
+
         window.onerror = function (e) {
           console.log(e);
         };
-        
+
         console.log = function (m) {
           var c = document.getElementById("console");
           c.innerText = c.innerText + m + "\n";
         }
-        
-        
+
+
         var elements = document.querySelectorAll(".myClass");
         var red = elements[2];
-        
+
         red.addEventListener("click", function () {
           console.log(new Date().toString());
         });
@@ -119,6 +119,19 @@
             </div>
             <div class="column">
                 <iframe class="result" frameborder="0"></iframe>
+            </div>
+
+            <div class="ui modal" id="openFileModal">
+                <i class="close icon"></i>
+                <div class="header">
+                    Open a HTML File
+                </div>
+                <div class="content">
+                    <input type="text" class="file-path" />
+                </div>
+                <div class="actions">
+                    <div class="ui button ok-button">OK</div>
+                </div>
             </div>
         </div>
     </body>
