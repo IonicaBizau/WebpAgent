@@ -49,8 +49,19 @@
     });
 
     // click on the start button
-    $(".run").on("click", function () {
+    $(".controls .run").on("click", function () {
         updateResult();
+    });
+
+    // click on the open button
+    $(".controls .open").on("click", function () {
+        $("#openFileModal").modal("show");
+    });
+
+    // close modal and open file
+    $("#openFileModal .ok-button").on("click", function () {
+        console.debug("Not implemented.");
+        $("#openFileModal").modal("close");
     });
 
     $(window).on("keydown", function (e) {
@@ -62,7 +73,6 @@
             $(".controls").trigger("sidebar.show");
         }
     });
-
 
     // editor.on("change", updateResult);
 
