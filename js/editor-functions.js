@@ -58,10 +58,22 @@
         $("#openFileModal").modal("show");
     });
 
+    // click on the save button
+    $(".controls .save").on("click", function () {
+        $("#saveFileModal").modal("show");
+    });
+
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
         console.debug("Not implemented.");
         $("#openFileModal").modal("close");
+    });
+
+    // close modal and open file
+    $("#saveFileModal .ok-button").on("click", function () {
+        var filePath = $("#saveFileModal .file-path").val();
+        $API.writeFile(filePath, editor.getValue());
+        $("#saveFileModal").modal("close");
     });
 
     $(window).on("keydown", function (e) {
