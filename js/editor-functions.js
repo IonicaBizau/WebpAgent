@@ -79,14 +79,20 @@
         $("#saveFileModal").modal("close");
     });
 
+    // key down handlers
     $(window).on("keydown", function (e) {
+
+        // <Ctrl-Enter> - Update result
         if (e.ctrlKey && e.which === 13) { updateResult(); }
-        if (e.ctrlKey && e.which === 38) {
-            $(".controls").trigger("sidebar.hide");
-        }
-        if (e.ctrlKey && e.which === 40) {
-            $(".controls").trigger("sidebar.show");
-        }
+
+        // <Ctrl-Up> - Hide top bar
+        if (e.ctrlKey && e.which === 38) { $(".controls").trigger("sidebar.hide"); }
+
+        // <Ctrl-Down> - Show top bar
+        if (e.ctrlKey && e.which === 40) { $(".controls").trigger("sidebar.show"); }
+
+        // <Esc> or <Ctrl-W> - Show top bar
+        if (e.which === 27 || e.ctrlKey && e.which === 87) { closeWindow(); }
     });
 
     // editor.on("change", updateResult);
