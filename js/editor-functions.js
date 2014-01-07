@@ -103,20 +103,39 @@
         if (e.ctrlKey && e.which === 83) { saveFile(); }
     });
 
+    // every change in editor
     editor.on("change", function () {
         // not saved
         changeSaveState (false);
     });
 
+    /*
+     *  This funtion updates the result iframe setting the
+     *  HTML inside of that iframe.
+     *
+     * */
     function updateResult () {
+
+        // get the iframe element
         var ifrm = $(".result:first")[0];
+
+        // empty the body content
         ifrm.contentDocument.body.textContent = "";
-        var htmlDocumentStr = editor.getValue()
+
+        // get the editor value
+        var htmlDocumentStr = editor.getValue();
+
+        // open the content document
         ifrm.contentDocument.open();
+
+        // write HTML in the document
         ifrm.contentDocument.write(htmlDocumentStr);
+
+        // and close it
         ifrm.contentDocument.close();
     }
 
+    // update the result
     updateResult();
 
     function closeWindow () {
