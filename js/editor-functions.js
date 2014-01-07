@@ -169,6 +169,17 @@
         // set saved state
         saved = Boolean(newState);
 
-        // TODO Update UI
+        var windowTitle = "";
+
+        if (saved) {
+            windowTitle = "WebpAgent - " + savedFilePath;
+        } else {
+            windowTitle = " * WebpAgent";
+            if (savedFilePath) {
+                windowTitle += " - " + savedFilePath;
+            }
+        }
+
+        $API.setWindowTitle(windowTitle);
     }
 })(window);
