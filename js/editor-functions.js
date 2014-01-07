@@ -69,14 +69,14 @@
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
         console.debug("Not implemented.");
-        $("#openFileModal").modal("close");
+        $("#openFileModal").modal("hide");
     });
 
     // close modal and open file
     $("#saveFileModal .ok-button").on("click", function () {
         var filePath = $("#saveFileModal .file-path").val();
-        $API.writeFile(filePath, editor.getValue());
-        $("#saveFileModal").modal("close");
+        saveFile(filePath);
+        $("#saveFileModal").modal("hide");
     });
 
     // hide top bar
@@ -98,9 +98,15 @@
 
         // <Esc> or <Ctrl-W> - Show top bar
         if (e.which === 27 || e.ctrlKey && e.which === 87) { closeWindow(); }
+
+        // <Ctrl-S> - Save file
+        if (e.ctrlKey && e.which === 83) { saveFile(); }
     });
 
-    // editor.on("change", updateResult);
+    editor.on("change", function () {
+        // not saved
+        changeSaveState (false);
+    });
 
     function updateResult () {
         var ifrm = $(".result:first")[0];
@@ -114,7 +120,11 @@
     updateResult();
 
     function closeWindow () {
-        // TODO Is file saved?
+        if (!saved) {
+            if (!custom.confirm("Your work is not saved. Do you want to quit?")) {
+                return;
+            }
+        }
         $API.closeWindow();
     }
 
@@ -126,4 +136,39 @@
             return confirm(m);
         }
     };
+
+    var savedFilePath;
+    function saveFile (filePath) {
+
+        // not yet saved in a file
+        if (!savedFilePath && !filePath) {
+            $(".controls .save").click();
+            return;
+        }
+
+        // file path not provided we take it from already saved file
+        if (filePath == undefined) {
+            filePath = savedFilePath;
+        } else {
+            savedFilePath = filePath;
+        }
+
+        // wrte in file
+        $API.writeFile(filePath, editor.getValue());
+
+        // not saved
+        changeSaveState (true);
+    }
+
+    var saved = false;
+    function changeSaveState (newState) {
+
+        // do nothing if we aready have the same state
+        if (saved === newState) { return; }
+
+        // set saved state
+        saved = Boolean(newState);
+
+        // TODO Update UI
+    }
 })(window);
