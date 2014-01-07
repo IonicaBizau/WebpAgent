@@ -7,11 +7,11 @@
         var $self = this;
 
         $self.on("sidebar.hide", function () {
-            $self.animate({"top": - $self.height() - 10});
+            $self.stop(true).animate({"top": - $self.height() - 10});
         });
 
         $self.on("sidebar.show", function () {
-            $self.animate({"top": 0});
+            $self.stop(true).animate({"top": 0});
         });
     };
 })($);
@@ -117,4 +117,13 @@
         // TODO Is file saved?
         $API.closeWindow();
     }
+
+    var custom = {
+        "alert": function (m) {
+            return alert(m);
+        },
+        "confirm": function (m) {
+            return confirm(m);
+        }
+    };
 })(window);
