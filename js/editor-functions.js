@@ -79,6 +79,11 @@
         $("#saveFileModal").modal("close");
     });
 
+    // hide top bar
+    $(".controls .hide-topbar").on("click", function () {
+        $(".controls").trigger("sidebar.hide");
+    });
+
     // key down handlers
     $(window).on("keydown", function (e) {
 
