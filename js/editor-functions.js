@@ -63,6 +63,12 @@
         $("#saveFileModal").modal("show");
     });
 
+    // click on the save button
+    $(".controls .quit").on("click", function () {
+        // TODO Is file saved?
+        $API.closeWindow();
+    });
+
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
         console.debug("Not implemented.");
