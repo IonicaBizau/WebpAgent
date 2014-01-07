@@ -64,10 +64,7 @@
     });
 
     // click on the save button
-    $(".controls .quit").on("click", function () {
-        // TODO Is file saved?
-        $API.closeWindow();
-    });
+    $(".controls .quit").on("click", closeWindow);
 
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
@@ -104,4 +101,9 @@
     }
 
     updateResult();
+
+    function closeWindow () {
+        // TODO Is file saved?
+        $API.closeWindow();
+    }
 })(window);
