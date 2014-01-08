@@ -68,7 +68,8 @@
 
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
-        console.debug("Not implemented.");
+        var filePath = $("#openFileModal .file-path").val();
+        editor.setValue($API.readFile(filePath));
         $("#openFileModal").modal("hide");
     });
 
