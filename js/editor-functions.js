@@ -167,7 +167,7 @@
 
         // not yet saved in a file
         if (!savedFilePath && !filePath) {
-            $(".controls .save").click();
+            $(".controls > .save").click();
             return;
         }
 
