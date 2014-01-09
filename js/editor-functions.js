@@ -55,12 +55,16 @@
 
     // click on the open button
     $(".controls > .open").on("click", function () {
-        $("#openFileModal").modal("show");
+        $("#openFileModal").modal("show", function () {
+            $(this).find("input:first").focus();
+        });
     });
 
     // click on the save button
     $(".controls > .save").on("click", function () {
-        $("#saveFileModal").modal("show");
+        $("#saveFileModal").modal("show", function () {
+            $(this).find("input:first").focus();
+        });
     });
 
     // click on about button
