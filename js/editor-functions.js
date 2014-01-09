@@ -62,6 +62,11 @@
     $(".controls .save").on("click", function () {
         $("#saveFileModal").modal("show");
     });
+    
+    // click on about button
+    $(".controls .about").on("click", function () {
+        $API.runBash("sh about.sh");
+    });
 
     // click on the save button
     $(".controls .quit").on("click", closeWindow);

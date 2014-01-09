@@ -54,3 +54,17 @@ iframe.result {
 .ml-s {
     margin-left: 10px !important;
 }
+
+.about.column {
+    text-shadow: 1px 1px 1px black;
+    color: white;
+    background: teal;
+}
+
+.about.column h1 {
+    text-align: center;
+}
+
+.about.column p {
+    text-align: center;
+}
