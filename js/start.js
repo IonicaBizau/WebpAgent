@@ -1,6 +1,6 @@
 $(document).on("ready", function () {
     var scriptsToLoad = [
-        "./semantic/javascript/semantic.min.js",
+        "./semantic/javascript/semantic.js",
         "./code-mirror/codemirror.js",
         "./code-mirror/addon/hint/show-hint.js",
         "./code-mirror/addon/hint/xml-hint.js",
