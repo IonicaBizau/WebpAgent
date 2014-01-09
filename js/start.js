@@ -53,10 +53,10 @@ function loadJsFile (path, callback) {
     });
     head.appendChild(node);
 }
-    
+
 // Set up load listener
 function onLoad (elm, handler) {
-    
+
     if (typeof elm.onload !== 'undefined') {
         elm.onload = handler;
     } else {
