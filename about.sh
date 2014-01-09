@@ -1,1 +1,1 @@
-johnnys-webview about.html 700 450 $@
+johnnys-webview about.html 400 250 $@
