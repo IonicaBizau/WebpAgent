@@ -2,9 +2,9 @@
     $.fn.sidebar = function (options) {
         var settings = $.extend({
             // defaults
-        }, options);
+        }, options)
 
-        var $self = this;
+          , $self = this;
 
         $self.on("sidebar.hide", function () {
             $self.stop(true).animate({"top": - $self.height() - 10});
@@ -24,29 +24,29 @@
     $(".controls").sidebar();
 
     var mixedMode = {
-        name: "htmlmixed",
-        scriptTypes: [
-            {
-                matches: /\/x-handlebars-template|\/x-mustache/i,
-                mode: null
-            },
-            {
-                matches: /(text|application)\/(x-)?vb(a|script)/i,
-                mode: "vbscript"
-            }
-        ]
-    };
+            name: "htmlmixed",
+            scriptTypes: [
+                {
+                    matches: /\/x-handlebars-template|\/x-mustache/i,
+                    mode: null
+                },
+                {
+                    matches: /(text|application)\/(x-)?vb(a|script)/i,
+                    mode: "vbscript"
+                }
+            ]
+        }
 
-    var editor = CodeMirror.fromTextArea($(".htmlDocument")[0], {
-        mode: mixedMode,
-        tabMode: "indent",
-        autoCloseBrackets: true,
-        lineNumbers: true,
-        extraKeys: {
-          "Ctrl-Space": "autocomplete"
-        },
-        value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
-    });
+      , editor = CodeMirror.fromTextArea($(".htmlDocument")[0], {
+            mode: mixedMode,
+            tabMode: "indent",
+            autoCloseBrackets: true,
+            lineNumbers: true,
+            extraKeys: {
+              "Ctrl-Space": "autocomplete"
+            },
+            value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
+        });
 
     // click on the start button
     $(".controls .run").on("click", function () {
@@ -123,13 +123,13 @@
     function updateResult () {
 
         // get the iframe element
-        var ifrm = $(".result:first")[0];
+        var ifrm = $(".result:first")[0]
+
+            // get the editor value
+          , htmlDocumentStr = editor.getValue();
 
         // empty the body content
         ifrm.contentDocument.body.textContent = "";
-
-        // get the editor value
-        var htmlDocumentStr = editor.getValue();
 
         // open the content document
         ifrm.contentDocument.open();
