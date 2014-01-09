@@ -49,27 +49,27 @@
         });
 
     // click on the start button
-    $(".controls .run").on("click", function () {
+    $(".controls > .run").on("click", function () {
         updateResult();
     });
 
     // click on the open button
-    $(".controls .open").on("click", function () {
+    $(".controls > .open").on("click", function () {
         $("#openFileModal").modal("show");
     });
 
     // click on the save button
-    $(".controls .save").on("click", function () {
+    $(".controls > .save").on("click", function () {
         $("#saveFileModal").modal("show");
     });
 
     // click on about button
-    $(".controls .about").on("click", function () {
+    $(".controls > .about").on("click", function () {
         $API.runBash("sh about.sh");
     });
 
     // click on the save button
-    $(".controls .quit").on("click", closeWindow);
+    $(".controls > .quit").on("click", closeWindow);
 
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
@@ -86,7 +86,7 @@
     });
 
     // hide top bar
-    $(".controls .hide-topbar").on("click", function () {
+    $(".controls > .hide-topbar").on("click", function () {
         $(".controls").trigger("sidebar.hide");
     });
 
