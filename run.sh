@@ -1,1 +1,1 @@
-johnnys-webview /home/$USER/.johnnys-webview-apps/text-to-speech/index.html 700 450 $@
+johnnys-webview /home/$USER/.johnnys-webview-apps/webpagent/index.html 700 450 $@
