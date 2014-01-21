@@ -1,5 +1,5 @@
 echo "> Copying executable ..."
-sudo cp start.sh /usr/bin/webpagent
+sudo cp run.sh /usr/bin/webpagent
 
 mkdir ~/.johnnys-webview-apps
 
