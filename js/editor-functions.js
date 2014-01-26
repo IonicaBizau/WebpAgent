@@ -85,6 +85,7 @@
     $("#openFileModal .ok-button").on("click", function () {
         var filePath = $("#openFileModal .file-path").val();
         editor.setValue($API.readFile(filePath));
+        updateResult();
         $("#openFileModal").modal("hide");
     });
 
