@@ -17,35 +17,40 @@
 })($);
 
 (function (window) {
+
+    // code mirror autocomplete
     CodeMirror.commands.autocomplete = function(cm) {
         CodeMirror.showHint(cm, CodeMirror.hint.html);
     };
 
+    // call sidebar plugin
     $(".controls").sidebar();
 
+    // hightlight
     var mixedMode = {
-            name: "htmlmixed",
-            scriptTypes: [
+            name: "htmlmixed"
+          , scriptTypes: [
                 {
-                    matches: /\/x-handlebars-template|\/x-mustache/i,
-                    mode: null
-                },
-                {
-                    matches: /(text|application)\/(x-)?vb(a|script)/i,
-                    mode: "vbscript"
+                    matches: /\/x-handlebars-template|\/x-mustache/i
+                  , mode: null
+                }
+              , {
+                    matches: /(text|application)\/(x-)?vb(a|script)/i
+                  , mode: "vbscript"
                 }
             ]
         }
 
+        // create the editor
       , editor = CodeMirror.fromTextArea($(".htmlDocument")[0], {
-            mode: mixedMode,
-            tabMode: "indent",
-            autoCloseBrackets: true,
-            lineNumbers: true,
-            extraKeys: {
+            mode: mixedMode
+          , tabMode: "indent"
+          , autoCloseBrackets: true
+          , lineNumbers: true
+          , extraKeys: {
               "Ctrl-Space": "autocomplete"
-            },
-            value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
+            }
+          , value: "<!doctype html>\n<html>\n  " + document.documentElement.innerHTML + "\n</html>"
         });
 
     // click on the start button
@@ -173,6 +178,11 @@
         }
     };
 
+    /**
+     *  Save file
+     *  Saves the editor content in a file (@filePath)
+     *
+     */
     var savedFilePath;
     function saveFile (filePath) {
 
@@ -196,6 +206,10 @@
         changeSaveState (true);
     }
 
+    /**
+     *  Updates the save state
+     *
+     */
     var saved = false;
     function changeSaveState (newState) {
 
@@ -205,6 +219,7 @@
         // set saved state
         saved = Boolean(newState);
 
+        // compute the window title
         var windowTitle = "";
 
         if (saved) {
@@ -216,6 +231,7 @@
             }
         }
 
+        // and set it
         $API.setWindowTitle(windowTitle);
     }
 })(window);
