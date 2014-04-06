@@ -18,6 +18,13 @@
 
 (function (window) {
 
+    // handle enter key press on modal input
+    $(document).on("keydown", ".modal input", function (e) {
+        if (e.keyCode === 13) {
+            $(this).closest(".modal").find(".button").click();
+        }
+    });
+
     // code mirror autocomplete
     CodeMirror.commands.autocomplete = function(cm) {
         CodeMirror.showHint(cm, CodeMirror.hint.html);
