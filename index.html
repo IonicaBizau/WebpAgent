@@ -50,81 +50,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title></title>
-        <script src="./js/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
         <style>
-          .myClass {
-            font-family: Ubuntu;
-            text-align: center;
-            text-shadow: 2px 2px 0 black;
-            border: 2px solid black;
-            background: wheat;
-            margin: 20px;
-            padding: 10px;
-            box-shadow: 2px 2px 0 darkgray;
-          }
+            body {
+                background: #ecf0f1;
+                color: #3498db;
+                font-shadow: 1px 1px 0 #2980b9;
+                font-family: 'Open Sans', sans-serif;
+                text-align: center;
+                font-size: 30px;
+            }
 
-          .myClass:hover {
-            cursor: default;
-          }
-
-          .myClass:nth-of-type(1) {
-            color: blue;
-          }
-
-          .myClass:nth-of-type(2) {
-            color: yellow;
-          }
-
-          .myClass:nth-of-type(3) {
-            cursor: pointer;
-            color: red;
-          }
-
-          .myClass:nth-of-type(4) {
-            background: red;
-            cursor: pointer;
-          }
-
-          .myClass:nth-of-type(4):hover {
-            background: blue;
-            cursor: pointer;
-          }
-
-          .myClass:nth-of-type(3):hover {
-            background: yellow;
-          }
+            p.blue {
+                color: #e74c3c;
+                text-shadow: 1px 1px 0 #c0392b;
+                font-weight: 800;
+            }
         </style>
     </head>
     <body>
-      <pre id="console"></pre>
-      <h1 class="myClass">Hello Blue World!</h1>
-      <h1 class="myClass">Hello Yellow World!</h1>
-      <h1 class="myClass">Hello Red World!</h1>
-      <script>
-
-        window.onerror = function (e) {
-          console.log(e);
-        };
-
-        console.log = function (m) {
-          var c = document.getElementById("console");
-          c.innerText = c.innerText + m + "\n";
-        }
-
-
-        var elements = document.querySelectorAll(".myClass");
-        var red = elements[2];
-
-        red.addEventListener("click", function () {
-          console.log(new Date().toString());
-        });
-      </script>
-      <h1 class="myClass">Hello</h1>
+        <h1>Because we <i class="fa fa-heart"></i> both web and desktop!</h1>
+        <i class="fa fa-asterisk"></i>
+        <p><strong>WebpAgent</strong> is desktop application designed to be easy to use for previewing HTML code.</p>
+        <p class="blue">The source code is hosted on <strong><i class="fa fa-github"></i> GitHub</p>
+          <i class="fa fa-smile-o" style="color:#8e44ad; font-size:60px;"></i>
     </body>
 </html></textarea>
             </div>
-            <div class="column">
+            <div class="column column-result">
                 <iframe class="result" frameborder="0"></iframe>
             </div>
 
