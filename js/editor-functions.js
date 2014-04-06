@@ -18,6 +18,10 @@
 
 (function (window) {
 
+    $(document).on("contextmenu", function () {
+        return false;
+    });
+
     // handle enter key press on modal input
     $(document).on("keydown", ".modal input", function (e) {
         if (e.keyCode === 13) {
@@ -149,7 +153,8 @@
         var ifrm = $(".result:first")[0]
 
             // get the editor value
-          , htmlDocumentStr = editor.getValue();
+          , htmlDocumentStr = editor.getValue()
+          ;
 
         // empty the body content
         ifrm.contentDocument.body.textContent = "";
