@@ -46,7 +46,7 @@ iframe.result {
     top: -30;
     left: 0;
     z-index: 99;
-    background: rgb(76, 206, 247);
+    background: #2980b9;
     right: 0;
     padding: 4px;
     border-bottom: 2px solid rgb(0, 122, 118);
