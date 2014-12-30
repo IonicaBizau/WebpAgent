@@ -100,7 +100,7 @@
     // close modal and open file
     $("#openFileModal .ok-button").on("click", function () {
         var filePath = $("#openFileModal .file-path").val();
-        editor.setValue($API.readFile(filePath));
+        editor.setValue(BAT.readFile(filePath));
         updateResult();
         $("#openFileModal").modal("hide");
     });
@@ -178,7 +178,7 @@
                 return;
             }
         }
-        $API.closeWindow();
+        BAT.closeWindow();
     }
 
     var custom = {
@@ -212,7 +212,7 @@
         }
 
         // wrte in file
-        $API.writeFile(filePath, editor.getValue());
+        BAT.writeFile(filePath, editor.getValue());
 
         // not saved
         changeSaveState (true);
@@ -244,6 +244,6 @@
         }
 
         // and set it
-        $API.setWindowTitle(windowTitle);
+        BAT.setWindowTitle(windowTitle);
     }
 })(window);

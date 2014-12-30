@@ -1,1 +1,1 @@
-$API.setWindowTitle ("WebpAgent");
+BAT.setWindowTitle ("WebpAgent");

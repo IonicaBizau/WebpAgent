@@ -22,7 +22,7 @@ $(document).on("ready", function () {
 
             $(".loading-overlay").fadeOut(function () {
                 $(this).remove();
-                $API.setWindowState("MAXIMIZED");
+                BAT.setWindowState("MAXIMIZED");
             });
 
             return;
