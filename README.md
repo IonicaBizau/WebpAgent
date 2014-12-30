@@ -7,7 +7,7 @@ A web page live loader.
 
 
 # How to install
-First of all, [download](https://github.com/IonicaBizau/johnnys-webview/raw/master/deb/64bit/64-dev-release.deb) and install latest version of [Johnny's Webview](https://github.com/IonicaBizau/johnnys-webview).
+Install the [`BAT`](https://github.com/IonicaBizau/bat#installation) platform.
 
 Then download this repository and run:
 

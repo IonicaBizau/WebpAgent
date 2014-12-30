@@ -1,1 +1,1 @@
-johnnys-webview about.html 400 250 $@
+bat -d about.html -s 400x250 $@

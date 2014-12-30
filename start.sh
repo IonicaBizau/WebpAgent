@@ -1,1 +1,1 @@
-johnnys-webview index.html 700 450 $@
+bat -d index.html -s 700x450 $@
