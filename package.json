@@ -1,0 +1,47 @@
+{
+  "name": "webpagent",
+  "version": "1.0.0",
+  "description": "Write HTML, CSS and JS snippets and preview them in real time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IonicaBizau/WebpAgent.git"
+  },
+  "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
+  "license": "KINDLY",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/WebpAgent/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/WebpAgent#readme",
+  "keywords": [
+    "preview",
+    "html",
+    "css",
+    "js",
+    "bat"
+  ],
+  "blah": {
+    "ex_img": "http://i.imgur.com/kG2ZBjl.png",
+    "title": "WebpAgent",
+    "installation": [
+      {
+        "h3": "Installation"
+      },
+      {
+        "p": [
+          "Install the [`BAT`](https://github.com/IonicaBizau/bat#installation) platform.",
+          "Then download this repository and run:"
+        ]
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "$ ./start"
+        }
+      }
+    ]
+  }
+}
