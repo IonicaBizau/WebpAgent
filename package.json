@@ -1,6 +1,6 @@
 {
   "name": "webpagent",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Write HTML, CSS and JS snippets and preview them in real time.",
   "main": "lib/index.js",
   "scripts": {
@@ -52,6 +52,7 @@
     "src/",
     "resources/",
     "menu/",
+    "scripts/",
     "cli.js",
     "index.js"
   ]
