@@ -11,6 +11,7 @@
 
 ### Installation
 
+
 Install the [`BAT`](https://github.com/IonicaBizau/bat#installation) platform.
 
 Then download this repository and run:
@@ -18,6 +19,7 @@ Then download this repository and run:
 ```sh
 $ ./start
 ```
+
 
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
